@@ -13,3 +13,27 @@ public class Weird {
       System.out.println( ((n % 2) == 1 || (6 <= n && n <= 20)) ? "Weird" : "Not Weird");
    }
 }
+public class Person { // class: a blueprint defining the characteristics and behaviors of an object of that class type
+   private int age;	// instance variable
+  
+	public Person(int initialAge) { // overloaded constructor: takes parameters
+  		// Add some more code to run some checks on initialAge
+      if (initialAge < 0) {
+            this.age = 0;
+            System.out.println("Age is not valid, setting age to 0.");
+        } else this.age = initialAge;
+	}
+
+	public void amIOld() { // method
+  		// Write code determining if this person's age is old and print the correct statement:
+        if (age < 13) System.out.println("You are young.");
+        else if (age >= 18) System.out.println("You are old.");
+        else System.out.println("You are a teenager.");
+	}
+
+	public void yearPasses() { // method
+  		// Increment this person's age.
+        this.age++;
+	}
+}
+
