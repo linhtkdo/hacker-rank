@@ -31,3 +31,29 @@ Sample Output
        
     }
 }
+public class BigInteger {
+
+    public static void main(String[] args) {
+    
+        Scanner sc = new Scanner(System.in);
+        BigInteger b1 = new BigInteger(sc.next()); // to convert string to big int
+        BigInteger b2 = new BigInteger(sc.next());
+        sc.close();
+        System.out.println(b1.add(b2)); // to add 2 big ints
+        System.out.println(b1.multiply(b2));
+    }
+}
+public class ExtraLongFactorial {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        sc.close();
+        BigInteger factorial = new BigInteger("1"); // init result
+        while (n > 1) { // start loop
+            factorial = factorial.multiply(BigInteger.valueOf(n)); // fix and save to result; converting int to big int 
+            n--; // decrement n
+        }
+        System.out.println(factorial);
+    }
+}
