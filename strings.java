@@ -23,3 +23,36 @@ public class Compare {
         );
     }
 }
+public class FunnyString {
+
+    public static void main(String[] args) {
+       
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        for (int i=0; i<t; i++) { // step through all test cases
+            String s = sc.next();
+            int flag = 0; // assume string is funny
+            
+            int j = 0; // init: s[j] (ASCII val) from start of tring
+            int k = s.length() - 1; // s[k] from end of string
+            
+            while (j < s.length() - 1) { // step through chars
+                int first = (int)s.charAt(j); // cast char to int = ASCII value
+                int sec = (int)s.charAt(j+1);
+                int last = (int)s.charAt(k);
+                int secLast = (int)s.charAt(k-1);
+                
+                if (Math.abs(first - sec) != Math.abs(last - secLast)) { // compare: abs diff s[i] - s[i+1] && s[k] - s[k-1]
+                    flag = 1; // if not equal, string is not funny, then stop the loop
+                    break;
+                }
+                j++;
+                k--;
+            }
+            System.out.println(flag==0 ? "Funny" : "Not Funny");
+           
+        }
+        sc.close();
+ 
+    }
+}
