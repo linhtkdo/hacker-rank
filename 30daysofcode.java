@@ -173,5 +173,33 @@ harry=12299933
         in.close();
     }
 }
+public class binaryNum {
+// For example: (4)10 → (?)2. The remainders form (100)2 (the binary equivalent of (4)10) when read from the bottom up: 
+// 4 ÷ 2 = 2 remainder 0 ↑ 
+// 2 ÷ 2 = 1 remainder 0 ↑ 
+// 1 ÷ 2 = 0 remainder 1 ↑ 
+// To convert an integer, n, from decimal to a String of binary numbers in Java, you can use the Integer.toBinaryString(n) function. 
+	
+// Given a base-10 integer, n, convert it to binary (base-2). 
+// Then find and print the base-10 integer denoting the maximum number of consecutive 1's in n's binary representation.
 
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        sc.close();
+        
+        int max = 0, count = 0, rem = 0;
+        
+        while (n > 0) {
+            rem = n % 2; // The remainder at each step of division is a single digit of the binary equivalent of n
+            if (rem == 1) {
+                count++;
+                if (count > max) max = count;
+            }
+            else count = 0;
+            n = n/2; // To convert an integer from decimal to binary, repeatedly divide your base-10 number, n, by 2.
+        }
+        System.out.println(max);
+    }
+}
 
