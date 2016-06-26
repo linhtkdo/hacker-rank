@@ -319,3 +319,27 @@ class printStudent {
 		System.out.println("Grade: " + s.calculate() );
 	}
 }
+class Difference {
+	private int[] elements;
+	public int maximumDifference;
+	
+	// save the argument passed as its integer array parameter to the integer array instance variable
+	Difference(int[] elts) { 
+		this.elements = elts;
+	}
+	
+	
+	void computeDifference() { 
+       int max = 1; // set max to its minimum possible value set by Constraints 
+       int min = 100; 
+       
+       // access the the integer array instance variable () and find its maximum and minimum elements.
+       for (int elt: elements) {
+           if (elt < min) min = elt;
+           if (elt > max) max = elt;
+       }
+       
+       // save their absolute difference to the instance variable. 
+       this.maximumDifference = max - min; 
+	}
+}
