@@ -69,3 +69,29 @@ public class hourGlass {
             
     }
 }
+public class palindrome {
+// str to check: racecar
+// add each ch to stack and queue
+// pop() from last ch; dequeue() from first ch
+// now compare
+
+    Stack<Character> stack = new Stack();
+    Queue<Character> queue = new LinkedList();
+    
+    void pushCharacter(char ch) {
+        stack.push(ch);
+    }
+    
+    void enqueueCharacter(char ch) {
+        queue.add(ch);
+    }
+    
+    char popCharacter() {
+        return stack.pop();
+    }
+    
+    char dequeueCharacter() {
+        return queue.remove();
+    }
+}
+    
