@@ -55,64 +55,6 @@ and then the two concatenated strings on the third line.
         scan.close();
    }
 }
-public class Arithmetic {
-// Given the meal price (base cost of a meal), tip percent (the percentage of the meal price being added as tip), and tax percent 
-// (the percentage of the meal price being added as tax) for a meal, find and print the meal's total cost.
-
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        double mealCost = scan.nextDouble(); // original meal price
-        int tipPercent = scan.nextInt(); // tip percentage
-        int taxPercent = scan.nextInt(); // tax percentage
-        scan.close();
-      
-        // Calculate Tax and Tip:
-        double tip = mealCost * tipPercent / 100; // mixed double and int -- int converted to double
-        double tax = mealCost * taxPercent / 100;
-        
-        // cast the result of the rounding operation to an int and save it as totalCost 
-        int totalCost = (int) Math.round(mealCost + tax + tip); // cast return-value (long) to (int)
-      
-        System.out.println("The total meal cost is " + totalCost + " dollars.");
-    }
-}
-public class Weird {
-// If n is odd, print Weird
-// If n is even and in the inclusive range of 2 to 5, print Not Weird
-// If n is even and in the inclusive range of 6 to 20, print Weird
-// If n is even and greater than 20, print Not Weird
-   public static void main(String[] args) {
-      Scanner sc = new Scanner(System.in);
-      int n = sc.nextInt(); 
-      sc.close();
-      
-      // Weird: odd or (even) 6...20; Not weird: otherwise
-      System.out.println( ((n % 2) == 1 || (6 <= n && n <= 20)) ? "Weird" : "Not Weird");
-   }
-}
-public class Person { // class: a blueprint defining the characteristics and behaviors of an object of that class type
-   private int age;	// instance variable
-  
-	public Person(int initialAge) { // overloaded constructor: takes parameters
-  		// Add some more code to run some checks on initialAge
-      if (initialAge < 0) {
-            this.age = 0;
-            System.out.println("Age is not valid, setting age to 0.");
-        } else this.age = initialAge;
-	}
-
-	public void amIOld() { // method
-  		// Write code determining if this person's age is old and print the correct statement:
-        if (age < 13) System.out.println("You are young.");
-        else if (age >= 18) System.out.println("You are old.");
-        else System.out.println("You are a teenager.");
-	}
-
-	public void yearPasses() { // method
-  		// Increment this person's age.
-        this.age++;
-	}
-}
 public class Reverse {
 Sample Input
 4
@@ -134,43 +76,6 @@ Sample Output
         }
         
         sc.close();
-    }
-}
-class Maps{
-	
-Sample Input
-3
-sam 99912222
-tom 11122222
-harry 12299933
-sam
-edward
-harry
-
-Sample Output
-sam=99912222
-Not found
-harry=12299933	
-
-    public static void main(String []argh){
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        Map<String, Integer> m = new HashMap<String, Integer>(); // Make an empty map
-        for(int i = 0; i < n; i++){
-            String name = in.next();
-            int phone = in.nextInt();
-            m.put(name, phone); // Add the key/value pairs; if the Key is already in the map, the Value is overwritten. 
-            
-        }
-        // Each line (query) contains a name to look up, and you must continue reading lines until there is no more input.
-        while(in.hasNext()){  
-            String s = in.next();
-            
-            // containsKey(Object key) tests if the given key is in the map, returning a boolean.
-            // get(Object key) Returns the value to which the key is mapped; returns null if there is no such mapping.
-            System.out.println(m.containsKey(s) ? s + "=" + m.get(s) : "Not found");
-        }
-        in.close();
     }
 }
 public class binaryNum {
@@ -200,40 +105,6 @@ public class binaryNum {
             n = n/2; // To convert an integer from decimal to binary, repeatedly divide your base-10 number, n, by 2.
         }
         System.out.println(max);
-    }
-}
-public class hourGlass {
-// 1 1 1 0 0 0
-// 0 1 0 0 0 0
-// 1 1 1 0 0 0
-// 0 0 0 0 0 0
-// 0 0 0 0 0 0
-// 0 0 0 0 0 0
-
-// a b c
-//   d
-// e f g
-
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int arr[][] = new int[6][6];
-        for(int i=0; i < 6; i++){
-            for(int j=0; j < 6; j++){
-                arr[i][j] = in.nextInt();
-            }
-        }
-        
-        int max = -63, sum; // every value in  will be in the inclusive range of -9 to 9 => min of glass = -9 * 7
-
-        for (int i=1; i < 5; i++) {
-            for (int j=1; j < 5; j++) {
-                sum = arr[i][j] + arr[i-1][j] + arr[i-1][j-1] + arr[i-1][j+1]
-                        + arr[i+1][j] + arr[i+1][j-1] + arr[i+1][j+1];
-                if (sum > max) max = sum;
-            }
-        }
-        System.out.println(max);
-            
     }
 }
 class Person {
