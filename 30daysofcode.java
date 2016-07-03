@@ -230,3 +230,7 @@ class Calculator {
         return (int)Math.pow(n, p);
     }
 }
+ public static <E> void printArray(E[] a) {
+        for (E e: a)
+            System.out.println(e);
+    }
